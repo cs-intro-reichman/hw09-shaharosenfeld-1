@@ -4,21 +4,7 @@
  *  the class represents a list of CharData objects. Likwise, the API of the class does not
  *  mention the existence of the Node objects). */
 public class List {
-    public static void Main(String args[])
-    {
-        List listtt = new List();
-        listtt.addFirst('e');
-        listtt.addFirst('e');
-        listtt.addFirst('t');
-        listtt.addFirst('t');
-        listtt.addFirst('i');
-        listtt.addFirst('m');
-        listtt.addFirst('m');
-        listtt.addFirst('o');
-        listtt.addFirst('c');
-        System.out.println(listtt);
-
-    }
+    
     // Points to the first node in this list
     private Node first;
 
@@ -44,7 +30,7 @@ public class List {
     /** GIVE Adds a CharData object with the given character to the beginning of this list. */
     public void addFirst(char chr) {
         CharData newCharD = new CharData(chr);
-        Node adding = new Node(newCharD,first.next);
+        Node adding = new Node(newCharD,null);
         adding.next = first;
         first = adding;
         size++;
@@ -73,7 +59,7 @@ public class List {
         Node current = first;
         int index = 0;
         while (current != null) {
-            if (current.cp.chr == chr) {
+            if (current.cp.equals(chr)) {
                 return index;
             }
             current = current.next;
